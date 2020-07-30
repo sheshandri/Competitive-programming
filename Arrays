@@ -1,0 +1,35 @@
+//naive approach find pair with the given sum in the array!!!
+#include <iostream>
+
+using namespace std;
+
+void findSum(int a[], int n, int sum)
+{
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=i+1;i<n;i++)
+        {
+            if(a[i]+a[j]==sum)
+            {
+                cout<<"pair found at "<< i<<" and "<<j<<endl;
+                return;
+            }
+           
+        }
+    }
+     
+                cout<<"pair not found"<<endl;
+    
+    
+}
+
+int main()
+{
+    int a[]={8, 7, 2, 5, 3, 1 };
+    int n=sizeof(a)/sizeof(a[0]);
+    int sum=10;
+    
+    findSum(a,n,sum);
+
+    return 0;
+}
