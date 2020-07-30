@@ -1,0 +1,38 @@
+// Algorithm to segregate 0's and 1's in an array
+#include<iostream>
+using namespace std;
+
+void segmentaArr(int a[], int n)
+{
+    int count=0;
+    //count the number of zeros
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]==0)
+        {
+            count++;
+        }
+    }
+    
+    for(int i=0;i<count;i++)
+    {
+        a[i]=0;
+    }
+    
+    for(int i=count;i<n;i++)
+    {
+        a[i]=1;
+    }
+}
+
+int main()
+{
+    int a[]={0, 1, 0, 1, 0, 0, 1, 1, 1, 0};
+    int n=sizeof(a)/sizeof(a[0]);
+    
+    segmentaArr(a,n);
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+}
