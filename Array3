@@ -1,0 +1,48 @@
+//Find a majority element in an array of size 'n'
+ #include<iostream>
+ using namespace std;
+ 
+ void majElement(int a[], int n)
+ {
+     
+     int max=0;
+     int index=-1;
+     int count;
+     for(int i=0;i<n;i++)
+     {
+         count=0;
+         for(int j=0;j<n;j++)
+         {
+             if(a[i]==a[j])
+             {
+                 count++;
+             }
+         }
+             
+             if(count>max)
+             {
+                 max=count;
+                 index=i;
+             }
+         }
+         
+         
+     
+     if(max>n/2)
+         {
+             cout<<a[index]<<" occured "<<count<<" times "<<endl;
+         }
+     else
+     {
+         cout<<"No majority";
+     }
+ }
+ 
+ int main()
+ {
+     int a[]={3, 3, 4, 2, 4, 4, 2, 4, 4};
+     int n=sizeof(a)/sizeof(a[0]);
+     
+     majElement(a,n);
+     return 0;
+ }
